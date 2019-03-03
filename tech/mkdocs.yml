@@ -23,6 +23,42 @@ markdown_extensions:
 #  - fenced_code
   - codehilite:
       guess_lang: true
-      linenums: true
+
+      # 行号。True为显示，False为不显示，None为自动。默认值为None
+      # 使用 colons(:::) 指定语言时，不显示行号 (但True强制显示)
+      # 使用 shebangs(#!) 指定语言时，显示行号 (但False强制不显示)
+#      linenums: true
+
+  # 脚注
+  # [^my key]
+  - footnotes
+
+  # 元信息，支持以下4种元信息
+  # title, description, path, source
+  - meta
+
+  # 用于TeX数学公式的展示
+  # todo 使用之前要先在docs/里创建javascripts目录，并在目录中放置extra.js
+  - pymdownx.arithmatex
+
+  # 任务列表
+  # - [x] task1
+  # - [ ] task2
   - pymdownx.tasklist
+
+  # 折叠注解
+  # ??? note "title"
+  # content
+  - pymdownx.details
+
   - pymdownx.inlinehilite
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.magiclink
+
+
+extra_javascript:
+    - 'js/extra.js'
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
