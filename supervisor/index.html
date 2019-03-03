@@ -689,19 +689,7 @@
 <h2 id="usage">Usage 用法<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="add-a-program">Add a Program 添加程序<a class="headerlink" href="#add-a-program" title="Permanent link">&para;</a></h3>
 <p>添加一个程序到 Supervisor 中的常用配置：<br/></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>;[program:theprogramname]
+<div class="codehilite"><pre><span></span>;[program:theprogramname]
 ;command=/bin/cat              ; the program (relative uses PATH, can take args)
 ;process_name=%(program_name)s ; process_name expr (default %(program_name)s)
 ;numprocs=1                    ; number of processes copies to start (def 1)
@@ -715,24 +703,12 @@
 ;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
 ;environment=A=&quot;1&quot;,B=&quot;2&quot;       ; process environment additions (def no adds)
 </pre></div>
-</td></tr></table>
+
 
 <p>点击<a href="supervisor_conf/#program"> 这里 </a>查看完整配置<br/></p>
 <p>例如：<br/>
 如果我需要让 Supervisor 管理我的 mkdocs 进程，那么我的配置如下：<br/></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">[program:my_first_mkdocs]</span>
+<div class="codehilite"><pre><span></span><span class="k">[program:my_first_mkdocs]</span>
 <span class="c1">; 执行命令/usr/local/bin/mkdocs serve -a 0.0.0.0:9001</span>
 <span class="na">command</span><span class="o">=</span><span class="s">/usr/local/bin/mkdocs serve -a 0.0.0.0:9001</span>
 <span class="c1">; 在/root/my_first_mkdocs目录下执行命令</span>
@@ -746,7 +722,7 @@
 <span class="c1">; 把错误输出stderr重定向到标准输出stdout</span>
 <span class="na">redirect_stderr</span><span class="o">=</span><span class="s">true</span>
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="run-supervisord">Run supervisord 启动服务端<a class="headerlink" href="#run-supervisord" title="Permanent link">&para;</a></h3>
 <p>启动命令：</p>
@@ -850,6 +826,10 @@
         
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

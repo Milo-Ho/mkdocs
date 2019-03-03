@@ -501,7 +501,7 @@
                 <h1 id="docker">Docker在当前环境下的简单使用<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <h2 id="_1">场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>python库存在基于<strong>ftncl</strong>函数的文件加锁调用，导致在<strong>windows</strong>中构建项目失败；</li>
+<li>python库存在基于**ftncl**函数的文件加锁调用，导致在**windows**中构建项目失败；</li>
 <li>共享的开发环境不便于进行频繁的调试</li>
 <li>保证开发与生产环境的完全一致，隔绝平台和网络的差异</li>
 </ul>
@@ -513,7 +513,7 @@
 </ul>
 <h2 id="docker_2">Docker存在的部分问题<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Docker在window10中会自动选择<a href="https://baike.baidu.com/item/Hyper-V/10508230?fr=aladdin"><strong>Hyper-V</strong></a>，但是在该模式下虚拟机的使用（如安卓模拟器）会直接造成电脑蓝屏，需要在关闭Hyper-V选项后，<strong>重启</strong>才能运行虚拟机（安卓模拟器）</li>
+<li>Docker在window10中会自动选择<a href="https://baike.baidu.com/item/Hyper-V/10508230?fr=aladdin"><strong>Hyper-V</strong></a>，但是在该模式下虚拟机的使用（如安卓模拟器）会直接造成电脑蓝屏，需要在关闭Hyper-V选项后，**重启**才能运行虚拟机（安卓模拟器）</li>
 <li>Docker镜像源地址在海外，需要翻墙（可以通过国内网易、阿里、网易镜像源解决）</li>
 <li>Docker在windows下的GUI也需要访问Docker海外网站，所以更多的是通过命令去执行Docker操作，对新手不友好</li>
 </ul>
@@ -526,23 +526,7 @@
 <h2 id="docker_4">Docker操作<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h2>
 <h3 id="docker_5">一、Docker运行镜像<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h3>
 <h4 id="_2">常见命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker images        显示本机的镜像文件
+<div class="codehilite"><pre><span></span>docker images        显示本机的镜像文件
 docker search IMAGE  仓库搜索镜像文件
 docker pull IMAGE    拉取镜像文件
 docker stop IMAGE    停止运行中的容器
@@ -560,7 +544,7 @@ docker run
   -e 设置环境变量
   --link 连接外部容器（如mysql、redis、nginx等）
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="_3">二、制作项目镜像<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>这里将mysql redis mongodb nginx分开，不采用多个应用程序共用同一个容器，容器之间通过--link命令通信，各自完全独立</p>
@@ -569,20 +553,7 @@ docker run
 <blockquote>
 <p>docker-compose.yml</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>version: &quot;3&quot;
+<div class="codehilite"><pre><span></span>version: &quot;3&quot;
 
 services:
   web:
@@ -597,26 +568,12 @@ services:
     command:
     - cd /data &amp;&amp; python manage.py run server 8000
 </pre></div>
-</td></tr></table>
+
 
 <blockquote>
 <p>dockerfile</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">#基础镜像</span>
+<div class="codehilite"><pre><span></span><span class="c">#基础镜像</span>
 <span class="k">FROM</span><span class="s"> daocloud.io/python:2.7</span>
 
 <span class="c">#app所在目录</span>
@@ -632,32 +589,19 @@ services:
 <span class="k">RUN</span> pip install --no-cache-dir -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 <span class="k">RUN</span> mkdir -p /data/logs
 </pre></div>
-</td></tr></table>
+
 
 <blockquote>
 <p>打包</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker-compose build
+<div class="codehilite"><pre><span></span>docker-compose build
 </pre></div>
-</td></tr></table>
+
 
 <blockquote>
 <p>运行</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 启动mysql</span>
+<div class="codehilite"><pre><span></span><span class="c1"># 启动mysql</span>
 docker run --name mysql -p <span class="m">3306</span>:3306 -p <span class="m">33060</span>:33060 -d -e <span class="nv">MYSQL_ALLOW_EMPTY_PASSWORD</span><span class="o">=</span><span class="nb">true</span>  mysql 
 
 <span class="c1"># 启动python程序</span>
@@ -672,7 +616,7 @@ python manage.py makemigrations
 python manage.py migrations
 python manage.py runserver <span class="m">8000</span>
 </pre></div>
-</td></tr></table>
+
 
 <p>这样就可以快乐的在windows上修改代码，在docker容器中运行项目debug了</p>
 <blockquote>
@@ -687,18 +631,7 @@ python manage.py runserver <span class="m">8000</span>
 <p>方案：数据库ip地址错误,将settings.py中ip地址设置成本机ip</p>
 </li>
 </ol>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># # makemigrations</span>
+<div class="codehilite"><pre><span></span><span class="c1"># # makemigrations</span>
 <span class="c1"># # https://docs.djangoproject.com/en/1.6/ref/settings/#databases</span>
 <span class="c1"># DB_HOST = &#39;192.168.100.22&#39;</span>
 <span class="c1"># DB_PASSWORD = &#39;bigworld&#39;</span>
@@ -711,22 +644,18 @@ python manage.py runserver <span class="m">8000</span>
 <span class="n">DB_PORT</span> <span class="o">=</span> <span class="s1">&#39;3306&#39;</span>
 <span class="n">DB_USER</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
 </pre></div>
-</td></tr></table>
+
 
 <ol>
 <li>连接数据库报错</li>
 </ol>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>File &quot;/usr/local/lib/python2.7/site-packages/pymysql/connections.py&quot;, line 1233, in _get_server_information
+<div class="codehilite"><pre><span></span>File &quot;/usr/local/lib/python2.7/site-packages/pymysql/connections.py&quot;, line 1233, in _get_server_information
     self.server_charset = charset_by_id(lang).name
 File &quot;/usr/local/lib/python2.7/site-packages/pymysql/charset.py&quot;, line 34, in by_id
     return self._by_id[id]
 KeyError: 255
 </pre></div>
-</td></tr></table>
+
 
 <ul>
 <li>
@@ -832,6 +761,10 @@ KeyError: 255
         
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>

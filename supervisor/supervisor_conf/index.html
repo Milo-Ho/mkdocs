@@ -434,154 +434,7 @@
 <blockquote>
 <p>echo_supervisord_conf</p>
 </blockquote>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
- 20
- 21
- 22
- 23
- 24
- 25
- 26
- 27
- 28
- 29
- 30
- 31
- 32
- 33
- 34
- 35
- 36
- 37
- 38
- 39
- 40
- 41
- 42
- 43
- 44
- 45
- 46
- 47
- 48
- 49
- 50
- 51
- 52
- 53
- 54
- 55
- 56
- 57
- 58
- 59
- 60
- 61
- 62
- 63
- 64
- 65
- 66
- 67
- 68
- 69
- 70
- 71
- 72
- 73
- 74
- 75
- 76
- 77
- 78
- 79
- 80
- 81
- 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">; Sample supervisor config file.</span>
+<div class="codehilite"><pre><span></span><span class="c1">; Sample supervisor config file.</span>
 <span class="c1">;</span>
 <span class="c1">; For more information on the config file, please see:</span>
 <span class="c1">; http://supervisord.org/configuration.html</span>
@@ -730,23 +583,11 @@
 <span class="k">[include]</span>
 <span class="na">files</span> <span class="o">=</span> <span class="s">/usr/local/etc/supervisor.d/*.ini</span>
 </pre></div>
-</td></tr></table>
+
 
 <h2 id="details">Details 配置文件详解<a class="headerlink" href="#details" title="Permanent link">&para;</a></h2>
 <h3 id="section-unix_http_server">Section: unix_http_server<a class="headerlink" href="#section-unix_http_server" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">[</span><span class="nx">unix_http_server</span><span class="cp">]</span>            
+<div class="codehilite"><pre><span></span><span class="cp">[</span><span class="nx">unix_http_server</span><span class="cp">]</span>            
 <span class="nt">file</span><span class="o">=/</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">supervisor</span><span class="p">.</span><span class="nc">sock</span>   <span class="o">;</span> <span class="nt">socket文件的路径</span><span class="err">，</span><span class="nt">supervisorctl用XML_RPC和supervisord通信就是通过它进行</span>
                               <span class="nt">的</span><span class="err">。</span><span class="nt">如果不设置的话</span><span class="err">，</span><span class="nt">supervisorctl也就不能用了</span>  
                               <span class="nt">不设置的话</span><span class="err">，</span><span class="nt">默认为none</span><span class="err">。</span> <span class="nt">非必须设置</span>        
@@ -760,75 +601,20 @@
                               <span class="nt">如</span><span class="err">：</span><span class="p">{</span><span class="err">SHA</span><span class="p">}</span><span class="nt">82ab876d1387bfafe46cc1c8a2ef074eae50cb1d</span>
                               <span class="nt">默认不设置</span><span class="err">。。。</span><span class="nt">非必须设置</span>
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-inet_http_server">Section: inet_http_server<a class="headerlink" href="#section-inet_http_server" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">;</span><span class="cp">[</span><span class="nx">inet_http_server</span><span class="cp">]</span>         <span class="o">;</span> <span class="nt">侦听在TCP上的socket</span><span class="err">，</span><span class="nt">Web</span> <span class="nt">Server和远程的supervisorctl都要用到他</span>
+<div class="codehilite"><pre><span></span><span class="o">;</span><span class="cp">[</span><span class="nx">inet_http_server</span><span class="cp">]</span>         <span class="o">;</span> <span class="nt">侦听在TCP上的socket</span><span class="err">，</span><span class="nt">Web</span> <span class="nt">Server和远程的supervisorctl都要用到他</span>
                               <span class="nt">不设置的话</span><span class="err">，</span><span class="nt">默认为不开启</span><span class="err">。</span><span class="nt">非必须设置</span>
 <span class="o">;</span><span class="nt">port</span><span class="o">=</span><span class="nt">127</span><span class="p">.</span><span class="nc">0</span><span class="p">.</span><span class="nc">0</span><span class="p">.</span><span class="nc">1</span><span class="p">:</span><span class="nd">9001</span>        <span class="o">;</span> <span class="nt">这个是侦听的IP和端口</span><span class="err">，</span><span class="nt">侦听所有IP用</span> <span class="p">:</span><span class="nd">9001或</span><span class="o">*</span><span class="p">:</span><span class="nd">9001</span><span class="err">。</span>
                               <span class="nt">这个必须设置</span><span class="err">，</span><span class="nt">只要上面的</span><span class="cp">[</span><span class="nx">inet_http_server</span><span class="cp">]</span><span class="nt">开启了</span><span class="err">，</span><span class="nt">就必须设置它</span>
 <span class="o">;</span><span class="nt">username</span><span class="o">=</span><span class="nt">user</span>              <span class="o">;</span> <span class="nt">这个和上面的uinx_http_server一个样</span><span class="err">。</span><span class="nt">非必须设置</span>
 <span class="o">;</span><span class="nt">password</span><span class="o">=</span><span class="nt">123</span>               <span class="o">;</span> <span class="nt">这个也一个样</span><span class="err">。</span><span class="nt">非必须设置</span>
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-supervisord">Section: supervisord<a class="headerlink" href="#section-supervisord" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[supervisord]                ;这个主要是定义supervisord这个服务端进程的一些参数的
+<div class="codehilite"><pre><span></span>[supervisord]                ;这个主要是定义supervisord这个服务端进程的一些参数的
                               这个必须设置，不设置，supervisor就不用干活了
 logfile=/tmp/supervisord.log ; 这个是supervisord这个主进程的日志路径，注意和子进程的日志不搭嘎。
                                默认路径$CWD/supervisord.log，$CWD是当前目录。。非必须设置
@@ -880,41 +666,20 @@ minprocs=200                 ; 最小可用的进程描述符，低于这个值s
                                序列呢？就是我们的\n,\t这些东西。
                                默认为false。。。非必须设置
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-rpcinterface">Section: rpcinterface<a class="headerlink" href="#section-rpcinterface" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">;</span> <span class="nt">the</span> <span class="nt">below</span> <span class="nt">section</span> <span class="nt">must</span> <span class="nt">remain</span> <span class="nt">in</span> <span class="nt">the</span> <span class="nt">config</span> <span class="nt">file</span> <span class="nt">for</span> <span class="nt">RPC</span>
+<div class="codehilite"><pre><span></span><span class="o">;</span> <span class="nt">the</span> <span class="nt">below</span> <span class="nt">section</span> <span class="nt">must</span> <span class="nt">remain</span> <span class="nt">in</span> <span class="nt">the</span> <span class="nt">config</span> <span class="nt">file</span> <span class="nt">for</span> <span class="nt">RPC</span>
 <span class="o">;</span> <span class="o">(</span><span class="nt">supervisorctl</span><span class="o">/</span><span class="nt">web</span> <span class="nt">interface</span><span class="o">)</span> <span class="nt">to</span> <span class="nt">work</span><span class="o">,</span> <span class="nt">additional</span> <span class="nt">interfaces</span> <span class="nt">may</span> <span class="nt">be</span>
 <span class="o">;</span> <span class="nt">added</span> <span class="nt">by</span> <span class="nt">defining</span> <span class="nt">them</span> <span class="nt">in</span> <span class="nt">separate</span> <span class="nt">rpcinterface</span><span class="o">:</span> <span class="nt">sections</span>
 <span class="cp">[</span><span class="nx">rpcinterface</span><span class="p">:</span><span class="nx">supervisor</span><span class="cp">]</span>    <span class="o">;</span><span class="nt">这个选项是给XML_RPC用的</span><span class="err">，</span><span class="nt">当然你如果想使用supervisord或者web</span> <span class="nt">server</span> <span class="nt">这</span> 
                               <span class="nt">个选项必须要开启的</span>
 <span class="nt">supervisor</span><span class="p">.</span><span class="nc">rpcinterface_factory</span> <span class="o">=</span> <span class="nt">supervisor</span><span class="p">.</span><span class="nc">rpcinterface</span><span class="p">:</span><span class="nd">make_main_rpcinterface</span> 
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-supervisorctl">Section: supervisorctl<a class="headerlink" href="#section-supervisorctl" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cp">[</span><span class="nx">supervisorctl</span><span class="cp">]</span>              <span class="o">;</span><span class="nt">这个主要是针对supervisorctl的一些配置</span>  
+<div class="codehilite"><pre><span></span><span class="cp">[</span><span class="nx">supervisorctl</span><span class="cp">]</span>              <span class="o">;</span><span class="nt">这个主要是针对supervisorctl的一些配置</span>  
 <span class="nt">serverurl</span><span class="o">=</span><span class="nt">unix</span><span class="o">:///</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">supervisor</span><span class="p">.</span><span class="nc">sock</span> <span class="o">;</span> <span class="nt">这个是supervisorctl本地连接supervisord的时候</span><span class="err">，</span><span class="nt">本地UNIX</span> <span class="nt">socket</span>
                                         <span class="nt">路径</span><span class="err">，</span><span class="nt">注意这个是和前面的</span><span class="cp">[</span><span class="nx">unix_http_server</span><span class="cp">]</span><span class="nt">对应的</span>
                                         <span class="nt">默认值就是unix</span><span class="o">:///</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">supervisor</span><span class="p">.</span><span class="nc">sock</span><span class="err">。。</span><span class="nt">非必须设置</span>
@@ -932,91 +697,10 @@ minprocs=200                 ; 最小可用的进程描述符，低于这个值s
                                <span class="nt">默认是no</span> <span class="nt">file的</span><span class="err">。。</span><span class="nt">所以我们想要有这种功能</span><span class="err">，</span><span class="nt">必须指定一个文件</span><span class="err">。。。</span><span class="nt">非</span>
                                <span class="nt">必须设置</span>
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-program">Section: program<a class="headerlink" href="#section-program" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">;</span> <span class="nt">The</span> <span class="nt">below</span> <span class="nt">sample</span> <span class="nt">program</span> <span class="nt">section</span> <span class="nt">shows</span> <span class="nt">all</span> <span class="nt">possible</span> <span class="nt">program</span> <span class="nt">subsection</span> <span class="nt">values</span><span class="o">,</span>
+<div class="codehilite"><pre><span></span><span class="o">;</span> <span class="nt">The</span> <span class="nt">below</span> <span class="nt">sample</span> <span class="nt">program</span> <span class="nt">section</span> <span class="nt">shows</span> <span class="nt">all</span> <span class="nt">possible</span> <span class="nt">program</span> <span class="nt">subsection</span> <span class="nt">values</span><span class="o">,</span>
 <span class="o">;</span> <span class="nt">create</span> <span class="nt">one</span> <span class="nt">or</span> <span class="nt">more</span> <span class="s1">&#39;real&#39;</span> <span class="nt">program</span><span class="o">:</span> <span class="nt">sections</span> <span class="nt">to</span> <span class="nt">be</span> <span class="nt">able</span> <span class="nt">to</span> <span class="nt">control</span> <span class="nt">them</span> <span class="nt">under</span>
 <span class="o">;</span> <span class="nt">supervisor</span><span class="o">.</span>
 
@@ -1099,58 +783,10 @@ minprocs=200                 ; 最小可用的进程描述符，低于这个值s
 <span class="o">;</span><span class="nt">environment</span><span class="o">=</span><span class="nt">A</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">,</span><span class="nt">B</span><span class="o">=</span><span class="s2">&quot;2&quot;</span>       <span class="o">;</span> <span class="nt">这个是该子进程的环境变量</span><span class="err">，</span><span class="nt">和别的子进程是不共享的</span>
 <span class="o">;</span><span class="nt">serverurl</span><span class="o">=</span><span class="nt">AUTO</span>                <span class="o">;</span> 
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-eventlistener">Section: eventlistener<a class="headerlink" href="#section-eventlistener" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">; The below sample eventlistener section shows all possible</span>
+<div class="codehilite"><pre><span></span><span class="c1">; The below sample eventlistener section shows all possible</span>
 <span class="c1">; eventlistener subsection values, create one or more &#39;real&#39;</span>
 <span class="c1">; eventlistener: sections to be able to handle event notifications</span>
 <span class="c1">; sent by supervisor.</span>
@@ -1200,21 +836,10 @@ minprocs=200                 ; 最小可用的进程描述符，低于这个值s
                                  <span class="na">默认为空。。。非必须设置</span>
 <span class="c1">;serverurl=AUTO                ; override serverurl computation (childutils)</span>
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-group">Section: group<a class="headerlink" href="#section-group" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="o">;</span> <span class="nt">The</span> <span class="nt">below</span> <span class="nt">sample</span> <span class="nt">group</span> <span class="nt">section</span> <span class="nt">shows</span> <span class="nt">all</span> <span class="nt">possible</span> <span class="nt">group</span> <span class="nt">values</span><span class="o">,</span>
+<div class="codehilite"><pre><span></span><span class="o">;</span> <span class="nt">The</span> <span class="nt">below</span> <span class="nt">sample</span> <span class="nt">group</span> <span class="nt">section</span> <span class="nt">shows</span> <span class="nt">all</span> <span class="nt">possible</span> <span class="nt">group</span> <span class="nt">values</span><span class="o">,</span>
 <span class="o">;</span> <span class="nt">create</span> <span class="nt">one</span> <span class="nt">or</span> <span class="nt">more</span> <span class="s1">&#39;real&#39;</span> <span class="nt">group</span><span class="o">:</span> <span class="nt">sections</span> <span class="nt">to</span> <span class="nt">create</span> <span class="s2">&quot;heterogeneous&quot;</span>
 <span class="o">;</span> <span class="nt">process</span> <span class="nt">groups</span><span class="o">.</span>
 
@@ -1227,18 +852,10 @@ minprocs=200                 ; 最小可用的进程描述符，低于这个值s
 <span class="o">;</span><span class="nt">priority</span><span class="o">=</span><span class="nt">999</span>                  <span class="o">;</span> <span class="nt">优先级</span><span class="err">，</span><span class="nt">相对于组和组之间说的</span>
                                  <span class="nt">默认999</span><span class="err">。。</span><span class="nt">非必须选项</span>
 </pre></div>
-</td></tr></table>
+
 
 <h3 id="section-include">Section: include<a class="headerlink" href="#section-include" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>; The [include] section can just contain the &quot;files&quot; setting.  This
+<div class="codehilite"><pre><span></span>; The [include] section can just contain the &quot;files&quot; setting.  This
 ; setting can list multiple files (separated by whitespace or
 ; newlines).  It can also contain wildcards.  The filenames are
 ; interpreted as relative to this file.  Included files *cannot*
@@ -1248,38 +865,10 @@ minprocs=200                 ; 最小可用的进程描述符，低于这个值s
                                     就有点大了。我们可以把配置信息写到多个文件中，然后include过来
 ;files = relative/directory/*.ini
 </pre></div>
-</td></tr></table>
+
 
 <h2 id="supervisord">supervisord<a class="headerlink" href="#supervisord" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ supervisord --h
+<div class="codehilite"><pre><span></span>$ supervisord --h
 supervisord -- run a <span class="nb">set</span> of applications as daemons.
 
 Usage: /usr/local/bin/supervisord <span class="o">[</span>options<span class="o">]</span>
@@ -1309,30 +898,10 @@ Options:
 <span class="s1">                             list of &#39;</span>cumulative<span class="s1">&#39;, &#39;</span>calls<span class="s1">&#39;, and/or &#39;</span>callers<span class="s1">&#39;,</span>
 <span class="s1">                             e.g. &#39;</span>cumulative,callers<span class="err">&#39;</span><span class="o">)</span>
 </pre></div>
-</td></tr></table>
+
 
 <h2 id="supervisorctl">supervisorctl<a class="headerlink" href="#supervisorctl" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ supervisorctl --help
+<div class="codehilite"><pre><span></span>$ supervisorctl --help
 supervisorctl -- control applications run by supervisord from the cmd line.
 
 Usage: /usr/local/bin/supervisorctl <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>action <span class="o">[</span>arguments<span class="o">]]</span>
@@ -1354,7 +923,7 @@ specified on the <span class="nb">command</span> line, a <span class="s2">&quot;
 interactively is started.  Use the action <span class="s2">&quot;help&quot;</span> to find out about available
 actions.
 </pre></div>
-</td></tr></table>
+
 
 <table>
 <thead>
@@ -1378,7 +947,7 @@ actions.
 </tr>
 <tr>
 <td>-s/--serverurl URL</td>
-<td>URL on which supervisord server is listening<br/>(default "http://localhost:9001").</td>
+<td>URL on which supervisord server is listening<br/>(default "<a href="http://localhost:9001">http://localhost:9001</a>").</td>
 </tr>
 <tr>
 <td>-u/--username USERNAME</td>
@@ -1448,6 +1017,10 @@ actions.
         
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
     
   </body>
