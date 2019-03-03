@@ -1,0 +1,838 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
+    
+    
+      
+        <title>Docker - 技术文档整理归纳</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#docker" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="技术文档整理归纳" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              技术文档整理归纳
+            </span>
+            <span class="md-header-nav__topic">
+              Docker
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="技术文档整理归纳" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    技术文档整理归纳
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker
+      </label>
+    
+    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
+      Docker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="场景" class="md-nav__link">
+    场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" title="Docker与虚拟机的选择" class="md-nav__link">
+    Docker与虚拟机的选择
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_2" title="Docker存在的部分问题" class="md-nav__link">
+    Docker存在的部分问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_3" title="Docker安装" class="md-nav__link">
+    Docker安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_4" title="Docker操作" class="md-nav__link">
+    Docker操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_5" title="一、Docker运行镜像" class="md-nav__link">
+    一、Docker运行镜像
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="常见命令" class="md-nav__link">
+    常见命令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="二、制作项目镜像" class="md-nav__link">
+    二、制作项目镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Bash
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Bash
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bash/prompt/" title="Prompt" class="md-nav__link">
+      Prompt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../supervisor/" title="Supervisor" class="md-nav__link">
+      Supervisor
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      进程管理工具
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        进程管理工具
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../supervisor/" title="Supervisor" class="md-nav__link">
+      Supervisor
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="场景" class="md-nav__link">
+    场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" title="Docker与虚拟机的选择" class="md-nav__link">
+    Docker与虚拟机的选择
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_2" title="Docker存在的部分问题" class="md-nav__link">
+    Docker存在的部分问题
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_3" title="Docker安装" class="md-nav__link">
+    Docker安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_4" title="Docker操作" class="md-nav__link">
+    Docker操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_5" title="一、Docker运行镜像" class="md-nav__link">
+    一、Docker运行镜像
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="常见命令" class="md-nav__link">
+    常见命令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="二、制作项目镜像" class="md-nav__link">
+    二、制作项目镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="docker">Docker在当前环境下的简单使用<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="_1">场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>python库存在基于<strong>ftncl</strong>函数的文件加锁调用，导致在<strong>windows</strong>中构建项目失败；</li>
+<li>共享的开发环境不便于进行频繁的调试</li>
+<li>保证开发与生产环境的完全一致，隔绝平台和网络的差异</li>
+</ul>
+<h2 id="docker_1">Docker与虚拟机的选择<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Docker启动速度优于虚拟机</li>
+<li>Docker镜像安装便于虚拟机的应用程序安装，不需要编译安装的同时，摆脱应用程序下各种依赖的处理,资源相对丰富，存在各种完备的应用程序（如nginx、mysql、redis、mongodb...）</li>
+<li>Docker中各个应用程序之间完全独立，拥有各种的轻量级的内核系统</li>
+</ul>
+<h2 id="docker_2">Docker存在的部分问题<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Docker在window10中会自动选择<a href="https://baike.baidu.com/item/Hyper-V/10508230?fr=aladdin"><strong>Hyper-V</strong></a>，但是在该模式下虚拟机的使用（如安卓模拟器）会直接造成电脑蓝屏，需要在关闭Hyper-V选项后，<strong>重启</strong>才能运行虚拟机（安卓模拟器）</li>
+<li>Docker镜像源地址在海外，需要翻墙（可以通过国内网易、阿里、网易镜像源解决）</li>
+<li>Docker在windows下的GUI也需要访问Docker海外网站，所以更多的是通过命令去执行Docker操作，对新手不友好</li>
+</ul>
+<h2 id="docker_3">Docker安装<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.docker.com/docker-for-windows/install/">windows安装方式</a></li>
+<li><a href="https://docs.docker.com/docker-for-mac/">mac安装方式</a></li>
+<li><a href="https://docs.docker.com/install/linux/docker-ce/centos/">linux安装方式</a></li>
+</ul>
+<h2 id="docker_4">Docker操作<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h2>
+<h3 id="docker_5">一、Docker运行镜像<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h3>
+<h4 id="_2">常见命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker images        显示本机的镜像文件
+docker search IMAGE  仓库搜索镜像文件
+docker pull IMAGE    拉取镜像文件
+docker stop IMAGE    停止运行中的容器
+docker rm IMAGE      移除容器
+docker ps -a         显示当前加载中的所有容器（-a 表示包括运行中和停止状态）
+docker inspect       显示容器详细的配置信息
+
+docker run
+  -i 允许你对容器内的标准输入 (STDIN) 进行交互。 
+  -t 在新容器内指定一个伪终端或终端。
+  -p 端口指定映射
+  -d daemon后台运行
+  -v 本地挂载文件
+  -P 内部端口随机映射到本机
+  -e 设置环境变量
+  --link 连接外部容器（如mysql、redis、nginx等）
+</pre></div>
+</td></tr></table>
+
+<h3 id="_3">二、制作项目镜像<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>这里将mysql redis mongodb nginx分开，不采用多个应用程序共用同一个容器，容器之间通过--link命令通信，各自完全独立</p>
+<p>通过docker pull 命令安装mysql redis mongodb</p>
+<p>这里以pyq_web为例，创建并运行该项目</p>
+<blockquote>
+<p>docker-compose.yml</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>version: &quot;3&quot;
+
+services:
+  web:
+    build: ./pyq_web
+    # links: 
+    # - mysql
+    # - redis
+    #ports:
+    # - &quot;8000:8000&quot;
+    # volumes:
+    # - ./pyq_web:/data
+    command:
+    - cd /data &amp;&amp; python manage.py run server 8000
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>dockerfile</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c">#基础镜像</span>
+<span class="k">FROM</span><span class="s"> daocloud.io/python:2.7</span>
+
+<span class="c">#app所在目录</span>
+<span class="k">WORKDIR</span><span class="s"> /data</span>
+
+<span class="c">#将目录加到工作目录中</span>
+<span class="k">ADD</span> . /data
+
+<span class="c">#暴露端口</span>
+<span class="k">EXPOSE</span><span class="s"> 8000</span>
+
+<span class="c">#安装app所需依赖</span>
+<span class="k">RUN</span> pip install --no-cache-dir -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+<span class="k">RUN</span> mkdir -p /data/logs
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>打包</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>docker-compose build
+</pre></div>
+</td></tr></table>
+
+<blockquote>
+<p>运行</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># 启动mysql</span>
+docker run --name mysql -p <span class="m">3306</span>:3306 -p <span class="m">33060</span>:33060 -d -e <span class="nv">MYSQL_ALLOW_EMPTY_PASSWORD</span><span class="o">=</span><span class="nb">true</span>  mysql 
+
+<span class="c1"># 启动python程序</span>
+<span class="c1"># docker_web是我制作的镜像名</span>
+<span class="c1"># -p -v 可以在yml中固定，也可以在命令行中修改</span>
+<span class="c1"># -v相当于共享本地的源码文件夹</span>
+<span class="c1"># /bin/bash 是运行终端命令</span>
+docker run -it --link mysql:mysql -p <span class="m">8000</span>:8000 -v ./pyq_web:/data docker_web /bin/bash
+
+<span class="c1"># 进入容器后默认在/data目录</span>
+python manage.py makemigrations
+python manage.py migrations
+python manage.py runserver <span class="m">8000</span>
+</pre></div>
+</td></tr></table>
+
+<p>这样就可以快乐的在windows上修改代码，在docker容器中运行项目debug了</p>
+<blockquote>
+<p>问题</p>
+</blockquote>
+<ol>
+<li>
+<p>连接数据库失败 
+    <code class="codehilite">bpymysql.err.OperationalError: (2003, “Can’t connect to MySQL server on ‘127.0.0.1’”)</code></p>
+</li>
+<li>
+<p>方案：数据库ip地址错误,将settings.py中ip地址设置成本机ip</p>
+</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># # makemigrations</span>
+<span class="c1"># # https://docs.djangoproject.com/en/1.6/ref/settings/#databases</span>
+<span class="c1"># DB_HOST = &#39;192.168.100.22&#39;</span>
+<span class="c1"># DB_PASSWORD = &#39;bigworld&#39;</span>
+<span class="c1"># DB_PORT = &#39;3306&#39;</span>
+<span class="c1"># DB_USER = &#39;vpoker&#39;</span>
+<span class="c1"># DB_HOST = &#39;127.0.0.1&#39;</span>
+<span class="n">DB_HOST</span> <span class="o">=</span> <span class="s1">&#39;192.168.100.162&#39;</span>
+<span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="c1"># DB_PASSWORD = &#39;123456&#39;</span>
+<span class="n">DB_PORT</span> <span class="o">=</span> <span class="s1">&#39;3306&#39;</span>
+<span class="n">DB_USER</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<ol>
+<li>连接数据库报错</li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>File &quot;/usr/local/lib/python2.7/site-packages/pymysql/connections.py&quot;, line 1233, in _get_server_information
+    self.server_charset = charset_by_id(lang).name
+File &quot;/usr/local/lib/python2.7/site-packages/pymysql/charset.py&quot;, line 34, in by_id
+    return self._by_id[id]
+KeyError: 255
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>
+<p>方案：主要原因是MySQL8.0更新了很多字符集，但是这些字符集长度超过255了，所以旧版的PyMySQL不支持长度超过255的字符</p>
+<ul>
+<li>pip install --upgrade PyMySQL</li>
+<li>使用制定版本的mysql容器</li>
+</ul>
+</li>
+<li>
+<p>数据库不存在</p>
+</li>
+<li>
+<p>方案：create database <strong>DATABASE</strong></p>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../bash/prompt/" title="Prompt" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                Prompt
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b806dc00.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
