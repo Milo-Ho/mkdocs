@@ -1,0 +1,28 @@
+site_name: 技术文档整理归纳
+theme:
+  name: material
+#  name: readthedocs
+  language: zh
+
+nav:
+  - Home: index.md
+  - Docker: docker_0.md
+  - Bash:
+      - Prompt: bash/prompt.md
+  - Python:
+      - Supervisor: supervisor/index.md
+  - 进程管理工具:
+      - Supervisor: supervisor/index.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - attr_list
+  - tables
+  - admonition
+#  - fenced_code
+  - codehilite:
+      guess_lang: true
+      linenums: true
+  - pymdownx.tasklist
+  - pymdownx.inlinehilite
