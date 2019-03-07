@@ -13,10 +13,15 @@ nav:
       - Supervisor: supervisor/index.md
   - 进程管理工具:
       - Supervisor: supervisor/index.md
+  - MkDocs: mkdocs/index.md
 
 markdown_extensions:
   - toc:
       permalink: true
+#      baselevel: 1
+      toc_depth: 3
+      anchorlink: false
+
   - attr_list
   - tables
   - admonition
