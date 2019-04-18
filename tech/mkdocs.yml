@@ -14,15 +14,24 @@ nav:
   - 进程管理工具:
       - Supervisor: supervisor/index.md
   - MkDocs: mkdocs/index.md
+  - Tmux: tmux.md
 
 markdown_extensions:
   - toc:
       permalink: true
 #      baselevel: 1
+      # toc 只显示到h3
       toc_depth: 3
       anchorlink: false
 
+  # 缩写
+  # *[HTML]: Hyper Text Markup Language
+  # *[W3C]: World Wide Web Consortium
+#  - abbr
+
+  # 属性列表
   - attr_list
+
   - tables
   - admonition
 #  - fenced_code
@@ -76,5 +85,5 @@ extra_javascript:
 #    - https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js
 #    - https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js
 #    - js/umlconvert.js
-    - 'static/js/extra.js'
+    - 'js/extra.js'
     - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'

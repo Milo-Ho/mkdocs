@@ -29,11 +29,11 @@ sudo apt-get install tmux
 
 1. 在终端输入命令 `tmux` 就可以创建一个新的会话并连接到这个会话<br/>
 2. 按下 `Ctrl+b`，再按下 `%`，可以看到当前面板被平分成左右两块<br/>
-![](static/img/tmux/split_into_two_panes.png)
+![](img/tmux/split_into_two_panes.png)
 3. 按下 `Ctrl+b`，再按下方向键，可以在两个面板之间来回切换<br/>
 4. 按下 `Ctrl+b`，再按下`d`，就会脱离当前会话，回到终端<br/>
 5. 在终端内输入 `tmux ls`，可以查看当前 Tmux 服务器下的所有会话<br/>
-![](static/img/tmux/tmux_ls.png)
+![](img/tmux/tmux_ls.png)
 6. 在终端内输入 `tmux a`，可以重新连接到刚才脱离的会话中<br/>
 
 ## 按键绑定
