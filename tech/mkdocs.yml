@@ -10,6 +10,7 @@ nav:
   - Bash:
       - Prompt: bash/prompt.md
   - Python:
+      - todo: index.md
       - Decorator: python/decorator.md
       - Python里面奇怪的坑: python/strange_traps_in_python.md
       - 垃圾回收GC: python/gc.md
