@@ -10,11 +10,22 @@ nav:
   - Bash:
       - Prompt: bash/prompt.md
   - Python:
-      - Supervisor: supervisor/index.md
+      - Decorator: python/decorator.md
+      - Python里面奇怪的坑: python/strange_traps_in_python.md
+      - 垃圾回收GC: python/gc.md
   - 进程管理工具:
       - Supervisor: supervisor/index.md
   - MkDocs: mkdocs/index.md
   - Tmux: tmux.md
+  - 笔记（未整理）:
+      - MySQL: mysql.md
+      - Redis: redis.md
+      - 进程/线程/协程: coroutine.md
+      - 分布式设计: dcs.md
+      - tcp/udp/kcp: tcp.md
+      - 二进制编码: msgpack.md
+      - C++: cpp.md
+      - 未分类: misc.md
 
 markdown_extensions:
   - toc:

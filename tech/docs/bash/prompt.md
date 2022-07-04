@@ -230,10 +230,6 @@ Filesystem            Size  Used Avail Use% Mounted on
 [可以看到之前的"++"已经变成了"../02.ps4.sh 5+:",即{脚本名}.{行数}]
 ```
 
----
-作者：echo42  
-来源：CSDN  
-原文：https://blog.csdn.net/echo42/article/details/29654939  
-版权声明：本文为博主原创文章，转载请附上博文链接！ 
-
+## 参考
+https://blog.csdn.net/echo42/article/details/29654939  
 

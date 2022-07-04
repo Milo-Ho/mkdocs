@@ -14,49 +14,6 @@ is maintained by the W3C.
 *[W3C]: World Wide Web Consortium
 
 
-代码规范：<br/>
-首先，业务逻辑应该保持一致性，原子性，要么全部成功，要么全部失败并回滚。这里的失败包括出现异常或非法的逻辑。<br/>
-例如：取款操作。由于账户余额不足导致的取款失败，算是业务成功，属于正常的业务逻辑。<br/>
-只有出现报错(例如金额中有英文字母)，或是本来必定会存在的订单号，不存在了(非法的业务逻辑)，才算是业务失败<br/>
-
-应该进入业务逻辑之前打开事务，在业务逻辑结束之后，中途出现异常 或 非法的业务逻辑，都要全部回滚，否则，都全部提交。<br/>
-操作记录、消息发送、业务逻辑等，都应该相互独立，互不干扰<br/>
-即，业务失败，也要记录操作、并发送消息；记录操作出错，而导致的成功的业务回滚，或不发送消息，也是不行的；发送消息失败，也不能回滚了已经成功的业务，或不记录操作；<br/>
-
-记录的"修改个人信息"的记录，由于消息记录模块和修改信息这一业务模块要分离，所以会出现：修改前、修改时、修改后都分别在数据库中读取用户信息<br/>
-但实际上，我们只需要读一次数据库。<br/>
-解决办法就是，在最开始的时候，查出用户信息，并设为全局变量。然后，记录下修改前的信息、修改信息、记录下修改后的信息，都不需要额外的读数据库<br/>
-
-```
-:::python
-@gen_global_val
-@auto_record_operate
-def func(*args, **kwargs):
-    # 修改用户信息
-    user = global.user
-    # user.update(xx)
-    return
-
-def gen_global_val(func):
-    def wrapper(*args, **kwargs):
-        request = args[0] if args else kwargs['request']
-        uid = request.GET.get('uid')
-        if not uid:
-            return
-        
-        global.user = get_user(uid)
-        return func(*args, **kwargs)
-    return wrapper
-
-def auto_record_operate(func):
-    def wrapper(*args, **kwargs):
-        before_data = global.user
-        rst = func(*args, **kwargs)
-        after_data = global.user
-        insert_record(global.user.uid, before_data, after_data)
-        return rst
-```
-
 !!! type "optional explicit title within double quotes"
     Any number of other indented markdown elements.
 
@@ -193,71 +150,6 @@ Cache-->Objects: return
 Objects-->Helper: return
 Helper-->Views: return
 Views-->Response: return
-```
-Note right of Request: 请求经过路由发送到对应的Views
-Note right of Views: Views只根据主逻辑调用Helper
-Note right of Helper: Helper可以有很多层：最底层的Helper逻辑简单，对接Objects，操作对象；最上层的Helper逻辑复杂，对接Views，隐藏细节
-
-需求：记录用户的国旗<br/>
-代码：<br/>
-```
-:::python
-class UserInfo(models.Model):
-    user_id = 
-    flag = 
-    
-# 然后代码里面在很多的地方调用了这个 user.flag
-```
-
-需求：用户可以隐藏国旗，但是管理员后台，始终显示国旗，不隐藏<br/>
-代码：<br/>
-```
-:::python
-class UserInfo(models.Model):
-    user_id = 
-    flag =
-    is_hide_flag = 
-    
-# 然后所有使用了 user.flag 的地方都要再做 if user.is_hide_flag 判断
-```
-
-更好的代码：<br/>
-```
-:::python
-# models.py
-# 这是数据库表
-class UserInfo(models.Model):
-    user_id = 
-    flag = 
-    is_hide_flag =
-
-# user_info.py 
-# 这是抽象出来的对象
-class UserInfoObj(object):
-    def __init__(self, user_id):
-        self._obj = UserInfo.get(user_id)
-
-    @property
-    flag_never_hide(self):
-        """永不隐藏的国旗，管理员后台用这个"""
-        return self._obj.flag
-        
-    @property
-    flag_auto(self):
-        """自动的国旗，根据用户设置来决定是否显示，一般情况下使用这个"""
-        return self._obj.flag if not self._obj.is_hide_flag else ""
-        
-    @property
-    flag(self):
-        """
-        默认的国旗设置，可以返回 flag_never_hide 或 flag_auto
-        如：原来的代码10个地方使用user.flag，修改后8个地方要user.flag_auto，只有2个地方要user.flag_never_hide
-        那这里就 return self.flag_auto 然后把那2个地方手动改成 user.flag_never_hide
-        反过来：原来的代码10个地方使用user.flag，修改后2个地方要user.flag_auto，8个地方要user.flag_never_hide
-        那这里就 return self.flag_never_hide 然后把那2个地方手动改成 user.flag_auto
-        """
-        # return self._obj.flag  这行是改需求之前的代码
-        return self.flag_auto
 ```
 
 单进程单线程（处理业务慢） -> 多进程多线程（并发问题）<br/>
