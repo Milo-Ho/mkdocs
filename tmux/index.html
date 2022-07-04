@@ -12,6 +12,8 @@
       
       
       
+        <meta name="author" content="m">
+      
       
         <meta name="lang:clipboard.copy" content="复制">
       
@@ -36,7 +38,7 @@
     
     
       
-        <title>Docker - 技术文档整理归纳</title>
+        <title>Tmux</title>
       
     
     
@@ -75,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#docker" tabindex="1" class="md-skip">
+      <a href="#tmux" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -100,7 +102,7 @@
               技术文档整理归纳
             </span>
             <span class="md-header-nav__topic">
-              Docker
+              Tmux
             </span>
           
         </div>
@@ -178,97 +180,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Docker
-      </label>
-    
-    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../docker_0/" title="Docker" class="md-nav__link">
       Docker
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="场景" class="md-nav__link">
-    场景
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_1" title="Docker与虚拟机的选择" class="md-nav__link">
-    Docker与虚拟机的选择
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_2" title="Docker存在的部分问题" class="md-nav__link">
-    Docker存在的部分问题
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_3" title="Docker安装" class="md-nav__link">
-    Docker安装
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_4" title="Docker操作" class="md-nav__link">
-    Docker操作
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker_5" title="一、Docker运行镜像" class="md-nav__link">
-    一、Docker运行镜像
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="二、制作项目镜像" class="md-nav__link">
-    二、制作项目镜像
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -420,11 +336,77 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tmux/" title="Tmux" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tmux
+      </label>
+    
+    <a href="./" title="Tmux" class="md-nav__link md-nav__link--active">
       Tmux
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="简介" class="md-nav__link">
+    简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="按键绑定" class="md-nav__link">
+    按键绑定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="命令" class="md-nav__link">
+    命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="配置文件" class="md-nav__link">
+    配置文件
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -569,57 +551,37 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="场景" class="md-nav__link">
-    场景
+  <a href="#_1" title="简介" class="md-nav__link">
+    简介
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_1" title="Docker与虚拟机的选择" class="md-nav__link">
-    Docker与虚拟机的选择
+  <a href="#_2" title="安装" class="md-nav__link">
+    安装
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_2" title="Docker存在的部分问题" class="md-nav__link">
-    Docker存在的部分问题
+  <a href="#_3" title="按键绑定" class="md-nav__link">
+    按键绑定
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_3" title="Docker安装" class="md-nav__link">
-    Docker安装
+  <a href="#_4" title="命令" class="md-nav__link">
+    命令
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_4" title="Docker操作" class="md-nav__link">
-    Docker操作
+  <a href="#_5" title="配置文件" class="md-nav__link">
+    配置文件
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker_5" title="一、Docker运行镜像" class="md-nav__link">
-    一、Docker运行镜像
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" title="二、制作项目镜像" class="md-nav__link">
-    二、制作项目镜像
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -640,180 +602,320 @@
               
                 
                 
-                <h1 id="docker">Docker在当前环境下的简单使用<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
-<h2 id="_1">场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>python库存在基于**ftncl**函数的文件加锁调用，导致在**windows**中构建项目失败；</li>
-<li>共享的开发环境不便于进行频繁的调试</li>
-<li>保证开发与生产环境的完全一致，隔绝平台和网络的差异</li>
-</ul>
-<h2 id="docker_1">Docker与虚拟机的选择<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Docker启动速度优于虚拟机</li>
-<li>Docker镜像安装便于虚拟机的应用程序安装，不需要编译安装的同时，摆脱应用程序下各种依赖的处理,资源相对丰富，存在各种完备的应用程序（如nginx、mysql、redis、mongodb...）</li>
-<li>Docker中各个应用程序之间完全独立，拥有各种的轻量级的内核系统</li>
-</ul>
-<h2 id="docker_2">Docker存在的部分问题<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Docker在window10中会自动选择<a href="https://baike.baidu.com/item/Hyper-V/10508230?fr=aladdin"><strong>Hyper-V</strong></a>，但是在该模式下虚拟机的使用（如安卓模拟器）会直接造成电脑蓝屏，需要在关闭Hyper-V选项后，**重启**才能运行虚拟机（安卓模拟器）</li>
-<li>Docker镜像源地址在海外，需要翻墙（可以通过国内网易、阿里、网易镜像源解决）</li>
-<li>Docker在windows下的GUI也需要访问Docker海外网站，所以更多的是通过命令去执行Docker操作，对新手不友好</li>
-</ul>
-<h2 id="docker_3">Docker安装<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://docs.docker.com/docker-for-windows/install/">windows安装方式</a></li>
-<li><a href="https://docs.docker.com/docker-for-mac/">mac安装方式</a></li>
-<li><a href="https://docs.docker.com/install/linux/docker-ce/centos/">linux安装方式</a></li>
-</ul>
-<h2 id="docker_4">Docker操作<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h2>
-<h3 id="docker_5">一、Docker运行镜像<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h3>
-<h4>常见命令</h4>
-<div class="codehilite"><pre><span></span>docker images        显示本机的镜像文件
-docker search IMAGE  仓库搜索镜像文件
-docker pull IMAGE    拉取镜像文件
-docker stop IMAGE    停止运行中的容器
-docker rm IMAGE      移除容器
-docker ps -a         显示当前加载中的所有容器（-a 表示包括运行中和停止状态）
-docker inspect       显示容器详细的配置信息
-
-docker run
-  -i 允许你对容器内的标准输入 (STDIN) 进行交互。 
-  -t 在新容器内指定一个伪终端或终端。
-  -p 端口指定映射
-  -d daemon后台运行
-  -v 本地挂载文件
-  -P 内部端口随机映射到本机
-  -e 设置环境变量
-  --link 连接外部容器（如mysql、redis、nginx等）
+                <h1 id="tmux">Tmux<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h1>
+<h2 id="_1">简介<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Tmux 是一个终端复用工具。可以在一个终端窗口上创建、访问、控制多个终端会话。<br/>
+Tmux 可以创建多个 <strong><em>会话(session)</em></strong>，每个会话包含一个或多个 <strong><em>窗口(window)</em></strong>，每个窗口可以分割成一个或多个 <strong><em>面板(pane)</em></strong>。<br/>
+所有会话都会保存在 Tmux 服务器中，每个客户端都可以连接到任意一个会话并在屏幕上展示。<br/>
+服务器和每个客户端都是单独的进程，它们通过 /tmp 目录下的套接字文件进行通信。<br/></p>
+<p>在操作的过程中，无论客户端由于任何原因而断开了连接，只要服务器和会话没有关闭，都可以重新连接到之前的会话，继续进行未完成的操作。<br/>
+另外，我们还可以同时连接到同一个会话上，实现实时地共享屏幕。<br/></p>
+<h2 id="_2">安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h4>Mac OS</h4>
+<div class="codehilite"><pre><span></span>brew install tmux
 </pre></div>
 
 
-<h3 id="_2">二、制作项目镜像<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>这里将mysql redis mongodb nginx分开，不采用多个应用程序共用同一个容器，容器之间通过--link命令通信，各自完全独立</p>
-<p>通过docker pull 命令安装mysql redis mongodb</p>
-<p>这里以pyq_web为例，创建并运行该项目</p>
-<blockquote>
-<p>docker-compose.yml</p>
-</blockquote>
-<div class="codehilite"><pre><span></span>version: &quot;3&quot;
-
-services:
-  web:
-    build: ./pyq_web
-    # links: 
-    # - mysql
-    # - redis
-    #ports:
-    # - &quot;8000:8000&quot;
-    # volumes:
-    # - ./pyq_web:/data
-    command:
-    - cd /data &amp;&amp; python manage.py run server 8000
+<h4>Ubuntu</h4>
+<div class="codehilite"><pre><span></span>sudo apt-get install tmux
 </pre></div>
 
 
-<blockquote>
-<p>dockerfile</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><span class="c">#基础镜像</span>
-<span class="k">FROM</span><span class="s"> daocloud.io/python:2.7</span>
-
-<span class="c">#app所在目录</span>
-<span class="k">WORKDIR</span><span class="s"> /data</span>
-
-<span class="c">#将目录加到工作目录中</span>
-<span class="k">ADD</span> . /data
-
-<span class="c">#暴露端口</span>
-<span class="k">EXPOSE</span><span class="s"> 8000</span>
-
-<span class="c">#安装app所需依赖</span>
-<span class="k">RUN</span> pip install --no-cache-dir -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
-<span class="k">RUN</span> mkdir -p /data/logs
-</pre></div>
-
-
-<blockquote>
-<p>打包</p>
-</blockquote>
-<div class="codehilite"><pre><span></span>docker-compose build
-</pre></div>
-
-
-<blockquote>
-<p>运行</p>
-</blockquote>
-<div class="codehilite"><pre><span></span><span class="c1"># 启动mysql</span>
-docker run --name mysql -p <span class="m">3306</span>:3306 -p <span class="m">33060</span>:33060 -d -e <span class="nv">MYSQL_ALLOW_EMPTY_PASSWORD</span><span class="o">=</span><span class="nb">true</span>  mysql 
-
-<span class="c1"># 启动python程序</span>
-<span class="c1"># docker_web是我制作的镜像名</span>
-<span class="c1"># -p -v 可以在yml中固定，也可以在命令行中修改</span>
-<span class="c1"># -v相当于共享本地的源码文件夹</span>
-<span class="c1"># /bin/bash 是运行终端命令</span>
-docker run -it --link mysql:mysql -p <span class="m">8000</span>:8000 -v ./pyq_web:/data docker_web /bin/bash
-
-<span class="c1"># 进入容器后默认在/data目录</span>
-python manage.py makemigrations
-python manage.py migrations
-python manage.py runserver <span class="m">8000</span>
-</pre></div>
-
-
-<p>这样就可以快乐的在windows上修改代码，在docker容器中运行项目debug了</p>
-<blockquote>
-<p>问题</p>
-</blockquote>
+<p>▍安装完成之后，简单的使用一下<br/></p>
 <ol>
-<li>
-<p>连接数据库失败 
-    <code class="codehilite">bpymysql.err.OperationalError: (2003, “Can’t connect to MySQL server on ‘127.0.0.1’”)</code></p>
-</li>
-<li>
-<p>方案：数据库ip地址错误,将settings.py中ip地址设置成本机ip</p>
-</li>
+<li>在终端输入命令 <code class="codehilite">tmux</code> 就可以创建一个新的会话并连接到这个会话<br/></li>
+<li>按下 <code class="codehilite">Ctrl+b</code>，再按下 <code class="codehilite"><span class="c">%</span></code>，可以看到当前面板被平分成左右两块<br/>
+<img alt="" src="../img/tmux/split_into_two_panes.png" /></li>
+<li>按下 <code class="codehilite">Ctrl+b</code>，再按下方向键，可以在两个面板之间来回切换<br/></li>
+<li>按下 <code class="codehilite">Ctrl+b</code>，再按下<code class="codehilite">d</code>，就会脱离当前会话，回到终端<br/></li>
+<li>在终端内输入 <code class="codehilite">tmux ls</code>，可以查看当前 Tmux 服务器下的所有会话<br/>
+<img alt="" src="../img/tmux/tmux_ls.png" /></li>
+<li>在终端内输入 <code class="codehilite">tmux a</code>，可以重新连接到刚才脱离的会话中<br/></li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="c1"># # makemigrations</span>
-<span class="c1"># # https://docs.djangoproject.com/en/1.6/ref/settings/#databases</span>
-<span class="c1"># DB_HOST = &#39;192.168.100.22&#39;</span>
-<span class="c1"># DB_PASSWORD = &#39;bigworld&#39;</span>
-<span class="c1"># DB_PORT = &#39;3306&#39;</span>
-<span class="c1"># DB_USER = &#39;vpoker&#39;</span>
-<span class="c1"># DB_HOST = &#39;127.0.0.1&#39;</span>
-<span class="n">DB_HOST</span> <span class="o">=</span> <span class="s1">&#39;192.168.100.162&#39;</span>
-<span class="n">DB_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-<span class="c1"># DB_PASSWORD = &#39;123456&#39;</span>
-<span class="n">DB_PORT</span> <span class="o">=</span> <span class="s1">&#39;3306&#39;</span>
-<span class="n">DB_USER</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+<h2 id="_3">按键绑定<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在一个已连接的客户端内，可以使用组合键来控制 Tmux。组合键由一个前缀键和一个命令键组成，前缀键默认是 <code class="codehilite">C-b (Ctrl-b)</code><br/></p>
+<p>以下是常用的 Tmux 的默认命令键<br/></p>
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2">Ctrl + b</td>
+            <td>激活控制台；此时以下按键生效</td>
+        </tr>
+        <tr>
+            <td rowspan="9">系统操作</td>
+            <td>?</td>
+            <td>列出所有快捷键；按q返回
+        </tr>
+        <tr>
+            <td>d</td>
+            <td>脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>选择要脱离的会话；在同时开启了多个会话时使用</td>
+        </tr>
+        <tr>
+            <td>Ctrl+z</td>
+            <td>挂起当前会话</td>
+        </tr>
+        <tr>
+            <td>r</td>
+            <td>强制重绘未脱离的会话</td>
+        </tr>
+        <tr>
+            <td>s</td>
+            <td>选择并切换会话；在同时开启了多个会话时使用</td>
+        </tr>
+        <tr>
+            <td>:</td>
+            <td>进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器</td>
+        </tr>
+        <tr>
+            <td>[</td>
+            <td>进入复制模式；此时的操作与vi/emacs相同，按q/Esc退出</td>
+        </tr>
+        <tr>
+            <td>~</td>
+            <td>列出提示信息缓存；其中包含了之前tmux返回的各种提示信息</td>
+        </tr>
+        <tr>
+            <td rowspan="10">窗口操作</td>
+            <td>c</td>
+            <td>创建新窗口</td>
+        </tr>
+        <tr>
+            <td>&</td>
+            <td>关闭当前窗口</td>
+        </tr>
+        <tr>
+            <td>数字键</td>
+            <td>切换至指定窗口</td>
+        </tr>
+        <tr>
+            <td>p</td>
+            <td>切换至上一窗口</td>
+        </tr>
+        <tr>
+            <td>n</td>
+            <td>切换至下一窗口</td>
+        </tr>
+        <tr>
+            <td>l</td>
+            <td>在前后两个窗口间互相切换</td>
+        </tr>
+        <tr>
+            <td>w</td>
+            <td>通过窗口列表切换窗口</td>
+        </tr>
+        <tr>
+            <td>,</td>
+            <td>重命名当前窗口；这样便于识别</td>
+        </tr>
+        <tr>
+            <td>.</td>
+            <td>修改当前窗口编号；相当于窗口重新排序</td>
+        </tr>
+        <tr>
+            <td>f</td>
+            <td>在所有窗口中查找指定文本</td>
+        </tr>
+        <tr>
+            <td rowspan="14">面板操作</td>
+            <td>”</td>
+            <td>将当前面板平分为上下两块</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>将当前面板平分为左右两块</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>关闭当前面板</td>
+        </tr>
+        <tr>
+            <td>!</td>
+            <td>将当前面板置于新窗口；即新建一个窗口，其中仅包含当前面板</td>
+        </tr>
+        <tr>
+            <td>Ctrl+方向键</td>
+            <td>以1个单元格为单位移动边缘以调整当前面板大小</td>
+        </tr>
+        <tr>
+            <td>Alt+方向键</td>
+            <td>以5个单元格为单位移动边缘以调整当前面板大小</td>
+        </tr>
+        <tr>
+            <td>Space</td>
+            <td>在预置的面板布局中循环切换；依次包括even-horizontal、even-vertical、main-horizontal、main-vertical、tiled</td>
+        </tr>
+        <tr>
+            <td>q</td>
+            <td>显示面板编号</td>
+        </tr>
+        <tr>
+            <td>o</td>
+            <td>在当前窗口中选择下一面板</td>
+        </tr>
+        <tr>
+            <td>方向键</td>
+            <td>移动光标以选择面板</td>
+        </tr>
+        <tr>
+            <td>{</td>
+            <td>向前置换当前面板</td>
+        </tr>
+        <tr>
+            <td>}</td>
+            <td>向后置换当前面板</td>
+        </tr>
+        <tr>
+            <td>Alt+o</td>
+            <td>逆时针旋转当前窗口的面板</td>
+        </tr>
+        <tr>
+            <td>Ctrl+o</td>
+            <td>顺时针旋转当前窗口的面板</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>按键绑定可以通过 <code class="codehilite">bind-key</code> 和 <code class="codehilite">unbind-key</code> 命令来修改（前缀键和命令键都可以修改）</strong><br/></p>
+<h2 id="_4">命令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>常用命令：<br/></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>alias</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attach-session</td>
+<td>attach</td>
+<td>连接会话</td>
+</tr>
+<tr>
+<td>source-file</td>
+<td>source</td>
+<td>执行指定文件中的所有命令</td>
+</tr>
+<tr>
+<td>list-commands</td>
+<td>lscm</td>
+<td>列出所有的命令</td>
+</tr>
+<tr>
+<td>list-sessions</td>
+<td>ls</td>
+<td>列出所有的会话</td>
+</tr>
+<tr>
+<td>detach-client</td>
+<td>detach</td>
+<td>客户端脱离会话（默认是当前客户端脱离）</td>
+</tr>
+<tr>
+<td>bind-key</td>
+<td>bind</td>
+<td>按键绑定</td>
+</tr>
+<tr>
+<td>list-keys</td>
+<td>lsk</td>
+<td>列出所有已经绑定的按键</td>
+</tr>
+<tr>
+<td>send-keys</td>
+<td>send</td>
+<td>发送按键</td>
+</tr>
+<tr>
+<td>unbind-key</td>
+<td>unbind</td>
+<td>解除按键绑定</td>
+</tr>
+<tr>
+<td>set-option</td>
+<td>set</td>
+<td>设置会话选项</td>
+</tr>
+<tr>
+<td>set-window-option</td>
+<td>setw</td>
+<td>设置窗口选项</td>
+</tr>
+<tr>
+<td>show-options</td>
+<td>show</td>
+<td>展示会话选项</td>
+</tr>
+<tr>
+<td>show-window-options</td>
+<td>showw</td>
+<td>展示窗口选项</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">配置文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>通常，Tmux 服务器会在第一个会话创建的时候自动启动，在最后一个会话结束时自动关闭。<br/>
+当 Tmux 服务器启动时，会执行 <code class="codehilite">~/.tmux.conf</code> 中的命令。<br/>
+把配置写入 <code class="codehilite">~/.tmux.conf</code> 文件中，Tmux 服务器启动时自动执行文件中的命令，完成配置。<br/></p>
+<p>以下是我的配置：<br/></p>
+<div class="codehilite"><pre><span></span>set-option -g default-terminal &quot;screen&quot;
+set-option -g display-time 3000
+set-option -g history-limit 65535
+
+# copy-mode 将快捷键设置为 vi 模式
+set-window-option -g mode-keys vi
+
+# 窗口的初始序号；默认为0，这里设置为1
+set-option -g base-index 1
+# 提示信息的持续时间；设置足够的时间以避免看不清提示，单位为毫秒
+set-option -g display-time 5000
+# 控制台激活后的持续时间；设置合适的时间以避免每次操作都要先激活控制台，单位为毫秒
+set-option -g repeat-time 1000
+# 操作状态栏时的默认键盘布局；可以设置为vi或emacs
+set-option -g status-keys vi
+
+# 如果你开了多个窗口，可能想当别的窗口发生什么的时候你能收到通知
+set-window-option -g monitor-activity on
+set-option -g visual-activity on
+
+# 状态栏
+# 颜色
+set-option -g status-style bg=black
+# 对齐方式
+set-option -g status-justify centre
+# 左下角
+set-option -g status-left &#39;#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]&#39;
+set-option -g status-left-length 20
+# 窗口列表
+set-window-option -g automatic-rename on
+set-window-option -g window-status-format &#39;#[dim]#I:#[default]#W#[fg=grey,dim]&#39;
+set-window-option -g window-status-current-format &#39;#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]&#39;
+# 右下角
+set-option -g status-right &#39;#[fg=green]#[fg=cyan]%H:%M %Y-%b-%d %a#[fg=green]&#39;
+
+# 支持鼠标
+set-option -g mouse on
+
+# 更改prefix键
+set-option -g prefix C-x
+unbind-key C-b
+bind-key C-x send-prefix
+
+# 支持vi模式来切换pane
+# up
+bind-key k select-pane -U
+# down
+bind-key j select-pane -D
+# left
+bind-key h select-pane -L
+# right
+bind-key l select-pane -R
 </pre></div>
-
-
-<ol>
-<li>连接数据库报错</li>
-</ol>
-<div class="codehilite"><pre><span></span>File &quot;/usr/local/lib/python2.7/site-packages/pymysql/connections.py&quot;, line 1233, in _get_server_information
-    self.server_charset = charset_by_id(lang).name
-File &quot;/usr/local/lib/python2.7/site-packages/pymysql/charset.py&quot;, line 34, in by_id
-    return self._by_id[id]
-KeyError: 255
-</pre></div>
-
-
-<ul>
-<li>
-<p>方案：主要原因是MySQL8.0更新了很多字符集，但是这些字符集长度超过255了，所以旧版的PyMySQL不支持长度超过255的字符</p>
-<ul>
-<li>pip install --upgrade PyMySQL</li>
-<li>使用制定版本的mysql容器</li>
-</ul>
-</li>
-<li>
-<p>数据库不存在</p>
-</li>
-<li>
-<p>方案：create database <strong>DATABASE</strong></p>
-</li>
-</ul>
                 
                   
                 
@@ -834,7 +936,7 @@ KeyError: 255
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../mkdocs/" title="MkDocs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -843,19 +945,19 @@ KeyError: 255
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                Home
+                MkDocs
               </span>
             </div>
           </a>
         
         
-          <a href="../bash/prompt/" title="Prompt" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../mysql/" title="MySQL" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Prompt
+                MySQL
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

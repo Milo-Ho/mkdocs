@@ -36,7 +36,7 @@
     
     
       
-        <title>Install - 技术文档整理归纳</title>
+        <title>分布式设计 - 技术文档整理归纳</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#install" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -100,7 +100,7 @@
               技术文档整理归纳
             </span>
             <span class="md-header-nav__topic">
-              Install
+              分布式设计
             </span>
           
         </div>
@@ -346,10 +346,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       笔记（未整理）
@@ -401,11 +403,63 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../dcs/" title="分布式设计" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        分布式设计
+      </label>
+    
+    <a href="./" title="分布式设计" class="md-nav__link md-nav__link--active">
       分布式设计
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cap" title="CAP" class="md-nav__link">
+    CAP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#base" title="BASE" class="md-nav__link">
+    BASE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="有损服务" class="md-nav__link">
+    有损服务
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -483,22 +537,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-docker-for-windows" title="Install Docker for Windows" class="md-nav__link">
-    Install Docker for Windows
+  <a href="#cap" title="CAP" class="md-nav__link">
+    CAP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-docker-for-macos" title="Install Docker for MacOS" class="md-nav__link">
-    Install Docker for MacOS
+  <a href="#base" title="BASE" class="md-nav__link">
+    BASE
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-docker-for-linux" title="Install Docker for Linux" class="md-nav__link">
-    Install Docker for Linux
+  <a href="#_2" title="有损服务" class="md-nav__link">
+    有损服务
   </a>
   
 </li>
@@ -520,10 +574,114 @@
               
                 
                 
-                <h1 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h1>
-<h2 id="install-docker-for-windows">Install Docker for Windows<a class="headerlink" href="#install-docker-for-windows" title="Permanent link">&para;</a></h2>
-<h2 id="install-docker-for-macos">Install Docker for MacOS<a class="headerlink" href="#install-docker-for-macos" title="Permanent link">&para;</a></h2>
-<h2 id="install-docker-for-linux">Install Docker for Linux<a class="headerlink" href="#install-docker-for-linux" title="Permanent link">&para;</a></h2>
+                <h1 id="_1">分布式设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.cnblogs.com/xuwc/p/9152236.html">https://www.cnblogs.com/xuwc/p/9152236.html</a></p>
+<h3 id="cap">CAP<a class="headerlink" href="#cap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>一致性（Consistency）</li>
+<li>可用性（Availability）</li>
+<li>分区容忍性（Partition tolerance）：个人理解为分布式系统的可靠性</li>
+<li>一般牺牲C换取AP（指的是牺牲强一致性）</li>
+<li>一致性分为：强一致性；弱一致性；最终一致性；</li>
+</ul>
+<h3 id="base">BASE<a class="headerlink" href="#base" title="Permanent link">&para;</a></h3>
+<ul>
+<li>BA(Basic Available)基本可用（基本可用和高可用不一样，结合服务降级）<br/>
+整个系统在某些不可抗力的情况下，仍然能够保证“可用性”，即一定时间内仍然能够返回一个明确的结果。</li>
+<li>S(Soft State)柔性状态<br/>
+允许系统不同节点的数据副本之间进行数据同步的过程存在延时</li>
+<li>E(Eventual Consistency)最终一致性<br/>
+同一数据的不同副本的状态，可以不需要实时一致，但一定要保证经过一定时间后仍然是一致的。</li>
+</ul>
+<h3 id="_2">有损服务<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>二八定律，80%的流量其实都在20%的服务上
+1、超时
+2、熔断
+某服务出现了过载现象，为了防止整个系统故障，从而采取某种保护措施。
+直接关闭服务，或保证部分请求成功，另一部分直接返回失败（不占用服务资源）
+例如：5秒内连续请求失败达到20次，触发熔断机制，过滤60%的请求
+3、限流
+4、重试
+5、服务降级</p>
+<p>服务降级
+1、超时降级
+2、失败次数降级
+3、故障降级
+4、限流降级</p>
+<p>一、高并发（秒杀系统）
+动静分离（静态页面、静态资源可以用CDN、nginx加速）
+限流（从浏览器/APP端开始限流，站点层、服务层 每层都限流，页面缓存、数据缓存，最后落到DB上的压力就很小了）
+服务降级（</p>
+<p>二、分布式id
+稍差一些的方式：
+1、uuid
+int128，太长，MySQL要求主键尽可能短
+无序
+可能使用mac地址，会泄露信息</p>
+<p>2、MongoDB的ObjectID（时间戳+随机数，通过时间戳+pid+hostname的异或来取出种子seed）
+使用随机数，但是随机数种子seed有可能一样，导致id也会一样
+无序</p>
+<p>好的方式：
+1、snowflake
+依赖机器时钟
+- 分布式系统启动时同步机器时钟，保证时间的准确（运行过程中可以关闭NTP同步，就不会中途发生时钟回拨）
+- 使用时间递增，可以摆脱时钟依赖，但是会导致分布式id中的时间信息不是生成id的真正的时间点
+- 注意处理时钟回拨的情况，可以使系统暂时不可用
+- 可以结合机器时钟和时间递增，设定一个阈值，如果时钟回拨较少就可以等待时钟恢复回来，时钟回拨较多就报警并切换到时间递增的模式
+正确分配worker_id
+- 美团Leaf使用zookeeper分配worker_id
+- 百度uid使用数据库分配worker_id
+还可以根据实际情况，合理调整时间戳的占位长度、时间戳偏移量、机器数的占位长度、每毫秒可分配的占位长度
+还可以采用双buff的方式提前生成（百度uid）</p>
+<p>2、使用数据库生成
+可以根据业务分段分tag
+一次性批量生成step个id，这样访问数据库的频率从1降低到1/step
+即使DB宕机，短时间内也能正常对外提供服务
+采用双buff的方式提前生成
+DB主从备份、灾备</p>
+<p>拓展：
+玩家id的生成（玩家看到的游戏数字ID通常是要求不能连续，并且靓号不能被分配出去）
+一般是让一个有序id列表LIST_A和一个乱序id列表LIST_B满足双射，每次获取ID的时候，在LIST_A中id自增，然后拿到LIST_B中对应的值
+映射的实现方式：
+    最简单的，单纯的用洗牌算法打乱顺序，提前生成好，并写入数据库
+    Fibonacci Hashing
+    RSA算法，简单说，要加密的值和加密后的值是一一对应的
+有时候乱序id中还会加入hostnum，进行混淆，混淆方式就是每隔几位分别从乱序的uid或者hostnum里面获得</p>
+<p>三、分布式事务
+<a href="https://www.cnblogs.com/Daniel-Leung/p/fenbushishiwu20210825230930.html">https://www.cnblogs.com/Daniel-Leung/p/fenbushishiwu20210825230930.html</a>
+1、基于XA协议的两阶段提交
+2、消息事务+最终一致性（加入消息中间件）
+3、TCC</p>
+<p>分布式事务，本质上是对多个数据库的事务进行统一控制，按照控制力度可以分为：不控制、部分控制和完全控制。
+不控制就是不引入分布式事务；
+部分控制就是各种变种的两阶段提交，包括上面提到的消息事务+最终一致性、TCC模式；好处是并发量和性能很好，缺点是数据一致性减弱了；
+完全控制就是完全实现两阶段提交。牺牲了性能，保障了一致性</p>
+<p>四、分布式锁</p>
+<p>五、分布式的一致性</p>
+<p>六、分布式数据库
+1、读写分离（分组）
+* 线性提升数据库读性能
+* 通过消除读写锁冲突提升数据库写性能
+大部分互联网业务读多写少，数据库的读往往最先成为性能瓶颈
+分组主要解决“数据库读性能瓶颈”问题，在数据库扛不住读的时候，通常读写分离，通过增加从库线性提升系统读性能。
+从库的成本比缓存高，如果要解决“读性能瓶颈”问题，增加缓存更直接更容易</p>
+<p>2、水平切分（分片，同一业务的数据通过算法分割，例如取模）
+* 线性降低单库数据容量
+* 线性提升数据库写性能
+大部分互联网业务数据量很大，单库容量容易成为瓶颈</p>
+<p>3、垂直拆分（根据业务拆分）</p>
+<p>七、分布式任务调度
+同⼀个定时任务程序部署多份，只应该有⼀个定时任务在执行</p>
+<p>定时任务和消息队列的区别
+共同点：
+1、异步处理：⽐如注册、下单事件
+2、应⽤解耦：不管定时任务作业还是MQ都可以作为两个应⽤之间的⻮轮实现应⽤解耦，这个⻮轮可以中转数据，当然单体服务不需要考虑这些，服务拆分的时候往往都会考虑流量削峰。双⼗⼀的时候，任务作业和MQ都可以⽤来扛流量，后端系统根据服务能⼒定时处理订单或者从MQ抓取订单抓取到⼀个订单到来事件的话触发处理，对于前端⽤户来说看到的结果是已经下单成功了，下单是不受任何影响的。
+区别：
+1、定时任务作业是时间驱动，⽽MQ是事件驱动；
+2、时间驱动是不可代替的，⽐如⾦融系统每⽇的利息结算，不是说利息来⼀条（利息到来事件）就算⼀下，⽽往往是通过定时任务批量计算；
+所以，定时任务作业更倾向于批处理，MQ倾向于逐条处理；</p>
+<p>Quartz
+Elastic-Job</p>
                 
                   
                 
@@ -540,6 +698,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../coroutine/" title="进程/线程/协程" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                进程/线程/协程
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tcp/" title="tcp/udp/kcp" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                tcp/udp/kcp
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

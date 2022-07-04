@@ -36,7 +36,7 @@
     
     
       
-        <title>mkdocs.yml</title>
+        <title>Decorator</title>
       
     
     
@@ -100,7 +100,7 @@
               技术文档整理归纳
             </span>
             <span class="md-header-nav__topic">
-              mkdocs.yml
+              Decorator
             </span>
           
         </div>
@@ -226,10 +226,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Python
@@ -245,11 +247,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../python/decorator/" title="Decorator" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Decorator" class="md-nav__link md-nav__link--active">
       Decorator
     </a>
+    
   </li>
 
         
@@ -259,7 +270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../python/strange_traps_in_python/" title="Python里面奇怪的坑" class="md-nav__link">
+    <a href="../strange_traps_in_python/" title="Python里面奇怪的坑" class="md-nav__link">
       Python里面奇怪的坑
     </a>
   </li>
@@ -271,7 +282,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../python/gc/" title="垃圾回收GC" class="md-nav__link">
+    <a href="../gc/" title="垃圾回收GC" class="md-nav__link">
       垃圾回收GC
     </a>
   </li>
@@ -324,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="MkDocs" class="md-nav__link">
+    <a href="../../mkdocs/" title="MkDocs" class="md-nav__link">
       MkDocs
     </a>
   </li>
@@ -490,8 +501,89 @@
               
                 
                 
-                <h1 id="">mkdocs.yml<a class="headerlink" href="#" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>
+                <h1 id="">Decorator 装饰器<a class="headerlink" href="#" title="Permanent link">&para;</a></h1>
+<p>装饰器是一个很著名的设计模式，经常被用于有切面需求的场景，较为经典的有插入日志、性能测试、事务处理等。<br/>
+装饰器是解决这类问题的绝佳设计，有了装饰器，我们就可以抽离出大量函数中与函数功能本身无关的雷同代码并继续重用。<br/>
+概括的讲，装饰器的作用就是为已经存在的对象 <strong>添加额外的功能</strong> 。</p>
+<p>假设已有一个函数：</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s2">&quot;foo&quot;</span>
+</pre></div>
+
+
+<p>现在需要统计函数耗时：</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">def</span> <span class="nf">count_cost</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">():</span>
+        <span class="n">begin</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">print</span> <span class="s2">&quot;count_cost </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+</pre></div>
+
+
+<p>那么，</p>
+<div class="codehilite"><pre><span></span><span class="nd">@count_cost</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s2">&quot;foo&quot;</span>
+</pre></div>
+
+
+<p>等价于</p>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s2">&quot;foo&quot;</span>
+
+<span class="n">foo</span> <span class="o">=</span> <span class="n">count_cost</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span>
+</pre></div>
+
+
+<p>如果想要支持foo函数可以任意传入参数：</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">def</span> <span class="nf">count_cost</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">begin</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="k">print</span> <span class="s2">&quot;count_cost </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="nd">@count_cost</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s2">&quot;foo param: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">param</span>
+</pre></div>
+
+
+<p>如果想要支持装饰器可以任意传入参数（例如：函数执行时间超过n秒的才打印）：</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">def</span> <span class="nf">count_cost</span><span class="p">(</span><span class="n">seconds</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">outer_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="nd">@functools.wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">begin</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">end</span> <span class="o">-</span> <span class="n">begin</span> <span class="o">&gt;</span> <span class="n">seconds</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s2">&quot;count_cost </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">decorator</span>
+    <span class="k">return</span> <span class="n">outer_decorator</span>
+
+<span class="c1"># 函数执行时间超过5秒才打印</span>
+<span class="nd">@count_cost</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+    <span class="k">print</span> <span class="s2">&quot;foo param: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">param</span>
 </pre></div>
                 
                   
@@ -509,6 +601,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../bash/prompt/" title="Prompt" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                Prompt
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../strange_traps_in_python/" title="Python里面奇怪的坑" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                Python里面奇怪的坑
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

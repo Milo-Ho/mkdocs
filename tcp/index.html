@@ -31,21 +31,21 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
     
     
       
-        <title>技术文档整理归纳</title>
+        <title>tcp/udp/kcp - 技术文档整理归纳</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.982221ab.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
       
       
     
     
-      <script src="assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -54,7 +54,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#td_list" tabindex="1" class="md-skip">
+      <a href="#tcpkcpudp" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -84,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="." title="技术文档整理归纳" class="md-header-nav__button md-logo">
+        <a href=".." title="技术文档整理归纳" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -100,7 +100,7 @@
               技术文档整理归纳
             </span>
             <span class="md-header-nav__topic">
-              Home
+              tcp/udp/kcp
             </span>
           
         </div>
@@ -152,7 +152,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="." title="技术文档整理归纳" class="md-nav__button md-logo">
+    <a href=".." title="技术文档整理归纳" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -166,20 +166,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
-    
   </li>
 
     
@@ -189,7 +180,7 @@
 
 
   <li class="md-nav__item">
-    <a href="docker_0/" title="Docker" class="md-nav__link">
+    <a href="../docker_0/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -220,7 +211,7 @@
 
 
   <li class="md-nav__item">
-    <a href="bash/prompt/" title="Prompt" class="md-nav__link">
+    <a href="../bash/prompt/" title="Prompt" class="md-nav__link">
       Prompt
     </a>
   </li>
@@ -256,7 +247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="python/decorator/" title="Decorator" class="md-nav__link">
+    <a href="../python/decorator/" title="Decorator" class="md-nav__link">
       Decorator
     </a>
   </li>
@@ -268,7 +259,7 @@
 
 
   <li class="md-nav__item">
-    <a href="python/strange_traps_in_python/" title="Python里面奇怪的坑" class="md-nav__link">
+    <a href="../python/strange_traps_in_python/" title="Python里面奇怪的坑" class="md-nav__link">
       Python里面奇怪的坑
     </a>
   </li>
@@ -280,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="python/gc/" title="垃圾回收GC" class="md-nav__link">
+    <a href="../python/gc/" title="垃圾回收GC" class="md-nav__link">
       垃圾回收GC
     </a>
   </li>
@@ -316,7 +307,7 @@
 
 
   <li class="md-nav__item">
-    <a href="supervisor/" title="Supervisor" class="md-nav__link">
+    <a href="../supervisor/" title="Supervisor" class="md-nav__link">
       Supervisor
     </a>
   </li>
@@ -333,7 +324,7 @@
 
 
   <li class="md-nav__item">
-    <a href="mkdocs/" title="MkDocs" class="md-nav__link">
+    <a href="../mkdocs/" title="MkDocs" class="md-nav__link">
       MkDocs
     </a>
   </li>
@@ -345,7 +336,7 @@
 
 
   <li class="md-nav__item">
-    <a href="tmux/" title="Tmux" class="md-nav__link">
+    <a href="../tmux/" title="Tmux" class="md-nav__link">
       Tmux
     </a>
   </li>
@@ -355,10 +346,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       笔记（未整理）
@@ -376,7 +369,7 @@
 
 
   <li class="md-nav__item">
-    <a href="mysql/" title="MySQL" class="md-nav__link">
+    <a href="../mysql/" title="MySQL" class="md-nav__link">
       MySQL
     </a>
   </li>
@@ -388,7 +381,7 @@
 
 
   <li class="md-nav__item">
-    <a href="redis/" title="Redis" class="md-nav__link">
+    <a href="../redis/" title="Redis" class="md-nav__link">
       Redis
     </a>
   </li>
@@ -400,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="coroutine/" title="进程/线程/协程" class="md-nav__link">
+    <a href="../coroutine/" title="进程/线程/协程" class="md-nav__link">
       进程/线程/协程
     </a>
   </li>
@@ -412,7 +405,7 @@
 
 
   <li class="md-nav__item">
-    <a href="dcs/" title="分布式设计" class="md-nav__link">
+    <a href="../dcs/" title="分布式设计" class="md-nav__link">
       分布式设计
     </a>
   </li>
@@ -422,11 +415,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="tcp/" title="tcp/udp/kcp" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        tcp/udp/kcp
+      </label>
+    
+    <a href="./" title="tcp/udp/kcp" class="md-nav__link md-nav__link--active">
       tcp/udp/kcp
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tcpudp" title="tcp和udp的区别" class="md-nav__link">
+    tcp和udp的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpkcp" title="tcp和kcp的区别" class="md-nav__link">
+    tcp和kcp的区别
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -436,7 +474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="msgpack/" title="二进制编码" class="md-nav__link">
+    <a href="../msgpack/" title="二进制编码" class="md-nav__link">
       二进制编码
     </a>
   </li>
@@ -448,7 +486,7 @@
 
 
   <li class="md-nav__item">
-    <a href="cpp/" title="C++" class="md-nav__link">
+    <a href="../cpp/" title="C++" class="md-nav__link">
       C++
     </a>
   </li>
@@ -460,7 +498,7 @@
 
 
   <li class="md-nav__item">
-    <a href="misc/" title="未分类" class="md-nav__link">
+    <a href="../misc/" title="未分类" class="md-nav__link">
       未分类
     </a>
   </li>
@@ -488,6 +526,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tcpudp" title="tcp和udp的区别" class="md-nav__link">
+    tcp和udp的区别
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpkcp" title="tcp和kcp的区别" class="md-nav__link">
+    tcp和kcp的区别
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -499,180 +560,42 @@
               
                 
                 
-                <h1 id="td_list">todo list<a class="headerlink" href="#td_list" title="Permanent link">&para;</a></h1>
-<ul>
-<li>整理<a href="https://zh.mweb.im/markdown.html">markdown语法</a></li>
-<li>整理<a href="https://mkdocs.org">mkdocs语法</a></li>
-<li>整理<a href="https://www.cnblogs.com/zhoujinyi/p/6073705.html">supervisor语法</a></li>
-<li>整理Python<ul>
-<li><a href="https://www.jianshu.com/p/62a6e3f2d1ca">six.py</a></li>
-</ul>
-</li>
-</ul>
-<p>The HTML specification 
-is maintained by the W3C.</p>
-<p>*[HTML]: Hyper Text Markup Language 
-*[W3C]: World Wide Web Consortium</p>
-<div class="admonition type">
-<p class="admonition-title">optional explicit title within double quotes</p>
-<p>Any number of other indented markdown elements.</p>
-<p>This is the second paragraph.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>this is note</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Don't try this at home</p>
-<p>...</p>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">attention</p>
-<p>attention</p>
-</div>
-<div class="admonition caution">
-<p class="admonition-title">caution</p>
-<p>caution</p>
-</div>
-<div class="admonition error">
-<p class="admonition-title">error</p>
-<p>error</p>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">danger</p>
-<p>danger</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">hint</p>
-<p>hint</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">important</p>
-<p>important</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">note</p>
-<p>note</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">tip</p>
-<p>tip</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">warning</p>
-<p>warning</p>
-</div>
-<div class="admonition unknown">
-<p class="admonition-title">unknown</p>
-<p>...</p>
-</div>
-<p>:command:<code class="codehilite">supervisord</code> Command-Line Options</p>
-<p>只有一个h1<br/>
-h2并列关系，尽量不加序号<br/>
-h3~h6 有顺序的可以加序号，没有顺序关系的也尽量不加序号<br/>
-h3 1. 2. 3. <br/>
-h4 (1) (2) (3) <br/>
-h5 a. b. c. <br/>
-h6 ①</p>
-<p>▍这个加在分级标题前效果好<br/>
-▏这个在段落前等于是空格各种三角 ▷ ◁ ▶ ◀ △▽▲▼<br/>
-➥ 和 → 还有 ˉˉ↴ 以及 ➨ 起引导视线的作用<br/>
-☛ 这个是点击<br/>
-☑ 和 ✔ 是已经选择，OK<br/>
-✘ 是错误，删除，NO<br/>
-✄ 是剪切<br/>
-❐ 这个是复制粘贴<br/>
-✚ 是添加，补充，选项<br/>
-☷ 是列表，调整格式<br/>
-① ② ③ ④ ⑤ ⑥ ⑦ ⑧ ⑨ ⑩ 这样的数字是不是很酷<br/>
-罗马数字（Ⅰ·Ⅱ·Ⅲ·Ⅳ·Ⅴ·Ⅵ·Ⅶ·Ⅷ·Ⅸ·Ⅹ·Ⅺ·Ⅻ）比较优雅复古</p>
-<div class="codehilite"><pre><span></span>st=&gt;start: Start:&gt;http://www.google.com[blank]
-e=&gt;end:&gt;http://www.google.com
-op1=&gt;operation: My Operation
-sub1=&gt;subroutine: My Subroutine
-cond=&gt;condition: Yes
-or No?:&gt;http://www.google.com
-io=&gt;inputoutput: catch something...
-st-&gt;op1-&gt;cond
-cond(yes)-&gt;io-&gt;e
-cond(no)-&gt;sub1(right)-&gt;op1
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">Here</span> <span class="k">is</span> <span class="n">a</span> <span class="n">title</span>
-<span class="n">A</span><span class="o">-&gt;</span><span class="n">B</span><span class="o">:</span> <span class="n">Normal</span> <span class="n">line</span>
-<span class="n">B</span><span class="o">--&gt;</span><span class="n">C</span><span class="o">:</span> <span class="n">Dashed</span> <span class="n">line</span>
-<span class="n">C</span><span class="o">-&gt;&gt;</span><span class="n">D</span><span class="o">:</span> <span class="n">Open</span> <span class="n">arrow</span>
-<span class="n">D</span><span class="o">--&gt;&gt;</span><span class="n">A</span><span class="o">:</span> <span class="n">Dashed</span> <span class="n">open</span> <span class="n">arrow</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>graph TD
-    client1--&gt;|read / write|SVN((SVN server))
-    client2--&gt;|read only|SVN
-    client3--&gt;|read / write|SVN
-    client4--&gt;|read only|SVN
-    client5(...)--&gt;SVN
-    SVN---|store the data|sharedrive
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>graph TD
-    subgraph Request
-    Request
-    end
-
-    subgraph Views
-    Views
-    end
-
-    subgraph Helper
-    Helper
-    end
-
-    subgraph Objects
-    Objects
-    end
-
-    subgraph Model
-    Model
-    end
-
-    subgraph Cache
-    Cache
-    end
-
-    Request--&gt;|route请求通过路由到达视图|Views
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="err">业务逻辑的架构</span>
-<span class="n">Request</span><span class="o">-&gt;</span><span class="n">Views</span><span class="o">:</span> <span class="n">route</span>
-<span class="n">Views</span><span class="o">-&gt;</span><span class="n">Helper</span><span class="o">:</span> <span class="n">call</span>
-<span class="n">Helper</span><span class="o">-&gt;</span><span class="n">Objects</span><span class="o">:</span> <span class="n">operate</span>
-<span class="n">Objects</span><span class="o">--&gt;</span><span class="n">Model</span><span class="o">:</span> <span class="n">read</span><span class="o">/</span><span class="n">write</span>
-<span class="n">Objects</span><span class="o">--&gt;</span><span class="n">Cache</span><span class="o">:</span> <span class="n">read</span><span class="o">/</span><span class="n">write</span>
-<span class="n">Model</span><span class="o">--&gt;</span><span class="n">Objects</span><span class="o">:</span> <span class="k">return</span>
-<span class="n">Cache</span><span class="o">--&gt;</span><span class="n">Objects</span><span class="o">:</span> <span class="k">return</span>
-<span class="n">Objects</span><span class="o">--&gt;</span><span class="n">Helper</span><span class="o">:</span> <span class="k">return</span>
-<span class="n">Helper</span><span class="o">--&gt;</span><span class="n">Views</span><span class="o">:</span> <span class="k">return</span>
-<span class="n">Views</span><span class="o">--&gt;</span><span class="n">Response</span><span class="o">:</span> <span class="k">return</span>
-</pre></div>
-
-
-<p>单进程单线程（处理业务慢） -&gt; 多进程多线程（并发问题）<br/>
-1、只有一个进程（组）专门负责写数据库（如果是进程组，每个进程都是写不同的数据库/不同的表）<br/>
-负责业务的进程（组）把需要写进数据库的数据放进队列，这边的进程（组）从队列读取，并写数据库<br/>
-优点：不加锁，异步写保证成功<br/>
-缺点：只能异步，无法获取返回值。不适合需要读+写的场景（需要等待它的返回值，再做其他操作的场景）<br/>
-适合：统计方面，如：登录人数，我只要通知他登录次数+1就可以了，不用管加之前/之后的值具体是多少<br/>
-不适合：如：支付，支付前需要判断余额是否够，支付后需要知道扣费是否成功<br/>
-2、根据ID路由到某个进程<br/>
-优点：不加锁，能够同步操作，可以随意读写，不会有并发问题<br/>
-缺点：只能操作一个表<br/>
-如：修改用户信息，按用户ID路由到某个进程<br/></p>
-<p>3、加锁
-4、原子操作</p>
+                <h1 id="tcpkcpudp">tcp/kcp/udp<a class="headerlink" href="#tcpkcpudp" title="Permanent link">&para;</a></h1>
+<h3 id="tcpudp">tcp和udp的区别<a class="headerlink" href="#tcpudp" title="Permanent link">&para;</a></h3>
+<ol>
+<li>tcp面向全双工连接，udp无连接（三次握手 建立连接）</li>
+<li>tcp可靠，udp不可靠（应答和重传机制 保证可靠性）</li>
+<li>tcp保证顺序，udp不保证</li>
+<li>tcp面向字节流，udp面向报文（tcp无保护消息边界，会粘包）</li>
+<li>tcp只能一对一，udp可以一对一、一对多、多对多（tcp需要三次握手建立连接，所以不能对多）</li>
+<li>tcp头部开销大，udp头部开销小</li>
+<li>tcp慢，udp快</li>
+</ol>
+<p>KCP协议就是在保留UDP快的基础上，提供可靠的传输，应用层使用更加简单——TCP可靠简单，但是复杂无私，所以速度慢。KCP尽可能保留UDP快的特点下，保证可靠。
+* TCP是为流量设计的（每秒内可以传输多少KB的数据），讲究的是充分利用带宽。
+* KCP是为流速设计的（单个数据包从一端发送到一端需要多少时间），以10%-20%带宽浪费的代价换取了比 TCP快30%-40%的传输速度。</p>
+<h3 id="tcpkcp">tcp和kcp的区别<a class="headerlink" href="#tcpkcp" title="Permanent link">&para;</a></h3>
+<ol>
+<li>tcp的超时时间是RTO*2，kcp是RTO*1.5</li>
+<li>tcp重传所有数据，kcp只重传丢失的数据</li>
+<li>kcp的快速重传：2次ack跨越会直接重传</li>
+<li>tcp延迟ACK，kcp非延迟ACK</li>
+<li>tcp使用UNA，kcp使用UNA+ACK</li>
+<li>kcp正常模式和tcp一样使用公平退让法则，kcp快速模式可以关闭流控（非退让）</li>
+</ol>
+<p>粘包：
+举个例子：有三个数据包，大小分别为2k、4k、6k，如果采用UDP发送的话，不管接受方的接收缓存有多大，我们必须要进行至少三次以上的发送才能把数据包发送完，但是使用TCP协议发送的话，我们只需要接受方的接收缓存有12k的大小，就可以一次把这3个数据包全部发送完毕，那么就会造成接收方一次会接收不止一条消息，这就是粘包。</p>
+<p>UNA（此编号前所有包已收到，如TCP）和ACK（该编号包已收到）</p>
+<hr />
+<p>流量控制
+滑动窗口
+停止等待协议（相当于发送窗口和接收窗口大小为1）
+后退N帧协议（GBN协议）
+选择重传协议(SR)</p>
+<p>消息保护边界
+(1)发送固定长度的消息
+(2)把消息的尺寸与消息一块发送
+(3)使用特殊标记来区分消息间隔</p>
                 
                   
                 
@@ -693,14 +616,28 @@ cond(no)-&gt;sub1(right)-&gt;op1
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../dcs/" title="分布式设计" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                分布式设计
+              </span>
+            </div>
+          </a>
         
-          <a href="docker_0/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../msgpack/" title="二进制编码" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Docker
+                二进制编码
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -728,28 +665,28 @@ cond(no)-&gt;sub1(right)-&gt;op1
       
     </div>
     
-      <script src="assets/javascripts/application.b806dc00.js"></script>
+      <script src="../assets/javascripts/application.b806dc00.js"></script>
       
         
         
           
-          <script src="assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
               
-                <script src="assets/javascripts/lunr/tinyseg.js"></script>
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
-        <script src="js/extra.js"></script>
+        <script src="../js/extra.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
